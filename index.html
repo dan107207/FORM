@@ -1,19 +1,114 @@
-<div class="container">
-  <h1>FormSubmit Demo</h1>
-  <form target="_blank" action="https://formsubmit.co/mutyabadanil@gmail.com" method="POST">
-    <div class="form-group">
-      <div class="form-row">
-        <div class="col">
-          <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FormSubmit Demo</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    section.bg-image {
+      min-height: 100vh;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: rgba(255,255,255,0.92);
+      padding: 2.5rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      max-width: 450px;
+      width: 100%;
+      margin: 2rem;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #222;
+      letter-spacing: 1px;
+    }
+    .form-group, .form-row {
+      margin-bottom: 1.2rem;
+    }
+    .form-row {
+      display: flex;
+      gap: 1rem;
+    }
+    .col {
+      flex: 1;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1px solid #bbb;
+      border-radius: 7px;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      background: #f8f8f8;
+      transition: border 0.2s;
+    }
+    .form-control:focus {
+      border: 1.5px solid #333;
+      outline: none;
+      background: #fff;
+    }
+    .btn {
+      width: 100%;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 7px;
+      background: #222;
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #444;
+    }
+    .file-input-label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #444;
+      font-weight: 500;
+    }
+    .file-input {
+      width: 100%;
+      padding: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <section class="bg-image">
+    <div class="container">
+      <h1>FormSubmit Demo</h1>
+      <form target="_blank" action="https://formsubmit.co/mutyabadanil@email.com" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col">
+              <input type="text" name="name" class="form-control" placeholder="Full Name" required>
+            </div>
+            <div class="col">
+              <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+            </div>
+          </div>
         </div>
-        <div class="col">
-          <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+        <div class="form-group">
+          <textarea placeholder="Your Message" class="form-control" name="message" rows="6"></textarea>
         </div>
-      </div>
+        <div class="form-group">
+          <label class="file-input-label" for="attachments">Attach files (images, videos, docs, etc.):</label>
+          <input class="file-input" type="file" id="attachments" name="attachments" multiple
+            accept="image/*,video/*,.pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.zip,.rar,.7z,.csv,.mp3,.mp4,.mov,.avi,.wmv,.mkv">
+        </div>
+        <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+      </form>
     </div>
-    <div class="form-group">
-      <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
-  </form>
-</div>
+  </section>
+</body>
+</html>
